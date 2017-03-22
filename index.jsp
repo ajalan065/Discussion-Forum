@@ -5,12 +5,15 @@
     	<%@include file="assets/css/form-elements.css" %>
     	<%@include file="my.css" %>
     	<%@include file="style.css" %>
+    	<%@include file="css/style.css" %>
+    	<%@include file="css/reset.css" %>
     	<%@include file="font-awesome.min.css" %>
 	</style>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery.backstretch.min.js"></script>
 <script src="assets/js/scripts.js"></script>
+<script src="js/modernizr.js"></script>
 	<title>
 		Discussion Forum
 	</title>
@@ -18,19 +21,116 @@
 <body>
 
 <div class="my-topnav my-card my-top my-light-grey" id="head">
-    <a href="http://oopadai.com/" ><img src="images/oopadai.png" style="height: 100%; width: 1.5em;" />Oopadai</a>
+    <a href="#" >Discussion Forum</a>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist" style="float: right;">
       <li role="presentation"><a href="http://oopadai.com/" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
       <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">About Us</a></li>
       <li role="presentation"><a href="http://oopadai.com/packages.php" aria-controls="messages" role="tab" data-toggle="tab">Packages</a></li>
       <li role="presentation"><a href="http://oopadai.com/coming.php" aria-controls="settings" role="tab" data-toggle="tab">Offerzone</a></li>
-      <li> <a class="launch-modal" href="#" data-modal-id="modal-register"><i class="fa fa-user-plus fa-lg"></i></a></li>
+      <li><div class="main-nav"><a class="cd-signup" href="#0" data-modal-id="modal-register"><i class="fa fa-user-plus fa-lg"></i></a></div></li>
     </ul>
   </div>
 
+
+
+
+	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+			<ul class="cd-switcher">
+				<li><a href="#0">Sign in</a></li>
+				<li><a href="#0">New account</a></li>
+			</ul>
+
+			<div id="cd-login"> <!-- log in form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" value="Login">
+					</p>
+				</form>
+				
+				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-login -->
+
+			<div id="cd-signup"> <!-- sign up form -->
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-username" for="signup-username">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="signup-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-password" for="signup-password">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+						<a href="#0" class="hide-password">Hide</a>
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms">
+						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div> <!-- cd-signup -->
+
+			<div id="cd-reset-password"> <!-- reset password form -->
+				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+				<form class="cd-form">
+					<p class="fieldset">
+						<label class="image-replace cd-email" for="reset-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+						<span class="cd-error-message">Error message here!</span>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" value="Reset password">
+					</p>
+				</form>
+
+				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+			</div> <!-- cd-reset-password -->
+			<a href="#0" class="cd-close-form">Close</a>
+		</div> <!-- cd-user-modal-container -->
+	</div> <!-- cd-user-modal -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script>
+
+
   <!-- MODAL -->
-     <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
+     <!--<div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
          <div class="modal-dialog">
           <div class="modal-content">
 
@@ -38,14 +138,23 @@
             <button type="button" class="close" data-dismiss="modal">
              <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
          </button>
-        <!--<ul class="nav nav-tabs" role="tablist">
-        <li role="presentation">-->
-         <h3 class="modal-title" id="modal-register-label" style="color: #fd625e; font-weight: bold; font-family: Verdana;">Create your Profile on DiFo</h3>
-         <!--</li>
-         </ul>-->
-     </div>
+         <ul class="nav nav-justified nav-tabs" role="tablist">
+         	<li><a class="cd-signin" href="#">Login</a></li>
+        	<li><a class="cd-signup" href="#">Register</a></li>
+         </ul>
+        <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation">
+         <h3 class="modal-title" id="modal-register-label" style="color: #fd625e; font-weight: bold; font-family: Verdana;">Login</h3>
+         </li>
+         <li role="presentation">
+         <h3 class="modal-title" id="modal-register-label" style="color: #fd625e; font-weight: bold; font-family: Verdana;">Register</h3>
+         </li>
+         </ul>
+     </div>-->
 
-     <div id="register">
+
+     <!--Register -->
+    <!-- <div id="register">
      <div class="modal-body">
 
            <form action="register.php" method="post" class="registration-form" enctype="multipart/form-data">
@@ -85,6 +194,27 @@
           <button type="submit" class="btn">Sign me up!</button>
       </form>
   </div>
+</div>-->
+
+
+	<!--Login-->
+	<!--<div id="login">
+     <div class="modal-body">
+
+           <form action="register.php" method="post" class="registration-form" enctype="multipart/form-data">
+              
+          <div class="form-group">
+              <label class="sr-only" for="form-email">Email</label>
+              <input type="text" name="form-first-name" placeholder="NickName" class="form-first-name form-control" id="form-first-name">
+          </div>
+          <div class="form-group">
+              <label class="sr-only" for="form-password">Password</label>
+              <input type="password" name="form-password" placeholder="Enter Password" class="form-password form-control" id="form-password">
+          </div>
+          <button type="submit" class="btn">Login!</button>
+      </form>
+  </div>
 </div>
+-->
 </body>
 </html>
