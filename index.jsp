@@ -10,30 +10,28 @@
     	<%@include file="font-awesome.min.css" %>
 	</style>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/jquery.backstretch.min.js"></script>
-<script src="assets/js/scripts.js"></script>
-<script src="js/modernizr.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery.backstretch.min.js"></script>
+	<script src="assets/js/scripts.js"></script>
+	<script src="js/modernizr.js"></script>
 	<title>
 		Discussion Forum
 	</title>
 </head>
+
 <body>
 
-<div class="my-topnav my-card my-top my-light-grey" id="head">
-    <a href="#" >Discussion Forum</a>
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist" style="float: right;">
-      <li role="presentation"><a href="http://oopadai.com/" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-      <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">About Us</a></li>
-      <li role="presentation"><a href="http://oopadai.com/packages.php" aria-controls="messages" role="tab" data-toggle="tab">Packages</a></li>
-      <li role="presentation"><a href="http://oopadai.com/coming.php" aria-controls="settings" role="tab" data-toggle="tab">Offerzone</a></li>
-      <li><div class="main-nav"><a class="cd-signup" href="#0" data-modal-id="modal-register"><i class="fa fa-user-plus fa-lg"></i></a></div></li>
-    </ul>
-  </div>
-
-
-
+	<div class="my-topnav my-card my-top my-light-grey" id="head">
+    	<a href="#" >Discussion Forum</a>
+    	<!-- Nav tabs -->
+    	<ul class="nav nav-tabs" role="tablist" style="float: right;">
+      		<li role="presentation"><a href="#" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+      		<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">About Us</a></li>
+      		<li role="presentation"><a href="http://oopadai.com/packages.php" aria-controls="messages" role="tab" data-toggle="tab">Packages</a></li>
+      		<li role="presentation"><a href="http://oopadai.com/coming.php" aria-controls="settings" role="tab" data-toggle="tab">Offerzone</a></li>
+      		<li><div class="main-nav"><a class="cd-signup" href="#0" data-modal-id="modal-register"><i class="fa fa-user-plus fa-lg"></i></a></div></li>
+    	</ul>
+  	</div>
 
 	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
 		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
@@ -87,8 +85,8 @@
 
 					<p class="fieldset">
 						<label class="image-replace cd-password" for="signup-password">Password</label>
-						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
-						<a href="#0" class="hide-password">Hide</a>
+						<input class="full-width has-padding has-border" id="signup-password" type="password"  placeholder="Password">
+						<a href="#0" class="hide-password">Show</a>
 						<span class="cd-error-message">Error message here!</span>
 					</p>
 
@@ -125,8 +123,10 @@
 			<a href="#0" class="cd-close-form">Close</a>
 		</div> <!-- cd-user-modal-container -->
 	</div> <!-- cd-user-modal -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/main.js"></script>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="js/main.js"></script>
 
 
   <!-- MODAL -->
